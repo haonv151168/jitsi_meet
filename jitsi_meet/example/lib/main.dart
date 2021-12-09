@@ -34,7 +34,7 @@ class _MeetingState extends State<Meeting> {
   @override
   void initState() {
     super.initState();
-    JitsiMeet.addListener(JitsiMeetingListener(
+    MBFMeet.addListener(JitsiMeetingListener(
         onConferenceWillJoin: _onConferenceWillJoin,
         onConferenceJoined: _onConferenceJoined,
         onConferenceTerminated: _onConferenceTerminated,
@@ -44,7 +44,7 @@ class _MeetingState extends State<Meeting> {
   @override
   void dispose() {
     super.dispose();
-    JitsiMeet.removeAllListeners();
+    MBFMeet.removeAllListeners();
   }
 
   @override
@@ -267,7 +267,7 @@ class _MeetingState extends State<Meeting> {
       };
 
     debugPrint("JitsiMeetingOptions: $options");
-    await JitsiMeet.joinMeeting(
+    await MBFMeet.joinMeeting(
       options,
       listener: JitsiMeetingListener(
           onConferenceWillJoin: (message) {

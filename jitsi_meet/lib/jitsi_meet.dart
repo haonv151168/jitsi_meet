@@ -16,7 +16,7 @@ export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart
         FeatureFlagHelper,
         FeatureFlagEnum;
 
-class JitsiMeet {
+class MBFMeet {
   static bool _hasInitialized = false;
 
   static final Map<RoomNameConstraintType, RoomNameConstraint>
