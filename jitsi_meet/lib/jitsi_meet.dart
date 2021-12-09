@@ -59,7 +59,7 @@ class MBFMeet {
       assert(Uri.parse(options.serverURL!).isAbsolute,
           "URL must be of the format <scheme>://<host>[/path], like https://someHost.com");
     }
-    options.userDisplayName = "haotest";
+    
     return await JitsiMeetPlatform.instance
         .joinMeeting(options, listener: listener);
   }
