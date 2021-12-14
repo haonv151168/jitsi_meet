@@ -1,9 +1,9 @@
-class JitsiMeetingResponse {
+class MBFMeetingResponse {
   final bool isSuccess;
   final String? message;
   final dynamic? error;
 
-  JitsiMeetingResponse({
+  MBFMeetingResponse({
     required this.isSuccess,
     this.message,
     this.error,
@@ -11,7 +11,7 @@ class JitsiMeetingResponse {
 
   @override
   String toString() {
-    return 'JitsiMeetingResponse{isSuccess: $isSuccess, '
+    return 'MBFMeetingResponse{isSuccess: $isSuccess, '
         'message: $message, error: $error}';
   }
 }

@@ -10,7 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  jitsi_meet_platform_interface: ^2.0.0
+  jitsi_meet_platform_interface:
+    git:
+      url: https://github.com/haonv151168/jitsi_meet.git
+      path: jitsi_meet_platform_interface
+      ref: develop
 
 dev_dependencies:
   flutter_test:

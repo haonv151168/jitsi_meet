@@ -1,6 +1,6 @@
 /// JitsiMeetingListener
 /// Class holding the callback functions for conference events
-class JitsiMeetingListener {
+class MBFMeetingListener {
   ///
   final Function(Map<dynamic, dynamic> message)? onConferenceWillJoin;
 
@@ -21,9 +21,9 @@ class JitsiMeetingListener {
 
   /// Generic listeners List for allowed listeners on web
   /// (may be for mobile too)
-  final List<JitsiGenericListener>? genericListeners;
+  final List<MBFGenericListener>? genericListeners;
 
-  JitsiMeetingListener(
+  MBFMeetingListener(
       {this.onConferenceWillJoin,
       this.onConferenceJoined,
       this.onConferenceTerminated,
@@ -34,9 +34,9 @@ class JitsiMeetingListener {
 }
 
 /// Generic listener
-class JitsiGenericListener {
+class MBFGenericListener {
   final String eventName;
   final Function(dynamic message) callback;
 
-  JitsiGenericListener({required this.eventName, required this.callback});
+  MBFGenericListener({required this.eventName, required this.callback});
 }

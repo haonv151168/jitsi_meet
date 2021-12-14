@@ -13,15 +13,15 @@ const MethodChannel _channel = MethodChannel('jitsi_meet');
 
 const EventChannel _eventChannel = const EventChannel('jitsi_meet_events');
 
-/// An implementation of [JitsiMeetPlatform] that uses method channels.
-class MethodChannelJitsiMeet extends JitsiMeetPlatform {
-  List<JitsiMeetingListener> _listeners = <JitsiMeetingListener>[];
-  Map<String, JitsiMeetingListener> _perMeetingListeners = {};
+/// An implementation of [MBFMeetPlatform] that uses method channels.
+class MethodChannelMBFMeet extends MBFMeetPlatform {
+  List<MBFMeetingListener> _listeners = <MBFMeetingListener>[];
+  Map<String, MBFMeetingListener> _perMeetingListeners = {};
 
   @override
-  Future<JitsiMeetingResponse> joinMeeting(
-    JitsiMeetingOptions options, {
-    JitsiMeetingListener? listener,
+  Future<MBFMeetingResponse> joinMeeting(
+    MBFMeetingOptions options, {
+    MBFMeetingListener? listener,
   }) async {
     // Attach a listener if it exists. The key is based on the serverURL + room
     if (listener != null) {
@@ -54,10 +54,10 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
     return await _channel
         .invokeMethod<String>('joinMeeting', _options)
         .then((message) =>
-            JitsiMeetingResponse(isSuccess: true, message: message))
+            MBFMeetingResponse(isSuccess: true, message: message))
         .catchError(
       (error) {
-        return JitsiMeetingResponse(
+        return MBFMeetingResponse(
             isSuccess: true, message: error.toString(), error: error);
       },
     );
@@ -69,13 +69,13 @@ class MethodChannelJitsiMeet extends JitsiMeetPlatform {
   }
 
   @override
-  addListener(JitsiMeetingListener jitsiMeetingListener) {
+  addListener(MBFMeetingListener jitsiMeetingListener) {
     _listeners.add(jitsiMeetingListener);
     initialize();
   }
 
   @override
-  removeListener(JitsiMeetingListener jitsiMeetingListener) {
+  removeListener(MBFMeetingListener jitsiMeetingListener) {
     _listeners.remove(jitsiMeetingListener);
   }
 

@@ -12,20 +12,20 @@ export 'jitsi_meet_response.dart';
 export 'feature_flag/feature_flag_helper.dart';
 export 'feature_flag/feature_flag_enum.dart';
 
-abstract class JitsiMeetPlatform extends PlatformInterface {
+abstract class MBFMeetPlatform extends PlatformInterface {
   /// Constructs a JitsiMeetPlatform.
-  JitsiMeetPlatform() : super(token: _token);
+  MBFMeetPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static JitsiMeetPlatform _instance = MethodChannelJitsiMeet();
+  static MBFMeetPlatform _instance = MethodChannelMBFMeet();
 
-  /// The default instance of [JitsiMeetPlatform] to use.
+  /// The default instance of [MBFMeetPlatform] to use.
   ///
-  /// Defaults to [MethodChannelJitsiMeet].
-  static JitsiMeetPlatform get instance => _instance;
+  /// Defaults to [MethodChannelMBFMeet].
+  static MBFMeetPlatform get instance => _instance;
 
-  static set instance(JitsiMeetPlatform instance) {
+  static set instance(MBFMeetPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }
@@ -33,8 +33,8 @@ abstract class JitsiMeetPlatform extends PlatformInterface {
   /// Joins a meeting based on the JitsiMeetingOptions passed in.
   /// A JitsiMeetingListener can be attached to this meeting that 
   /// will automatically be removed when the meeting has ended
-  Future<JitsiMeetingResponse> joinMeeting(JitsiMeetingOptions options,
-      {JitsiMeetingListener? listener}) async {
+  Future<MBFMeetingResponse> joinMeeting(MBFMeetingOptions options,
+      {MBFMeetingListener? listener}) async {
     throw UnimplementedError('joinMeeting has not been implemented.');
   }
 
@@ -43,12 +43,12 @@ abstract class JitsiMeetPlatform extends PlatformInterface {
   }
 
   /// Adds a JitsiMeetingListener that will broadcast conference events
-  addListener(JitsiMeetingListener jitsiMeetingListener) {
+  addListener(MBFMeetingListener jitsiMeetingListener) {
     throw UnimplementedError('addListener has not been implemented.');
   }
 
   /// remove JitsiListener
-  removeListener(JitsiMeetingListener jitsiMeetingListener) {
+  removeListener(MBFMeetingListener jitsiMeetingListener) {
     throw UnimplementedError('removeListener has not been implemented.');
   }
 

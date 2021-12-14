@@ -3,8 +3,8 @@ import 'dart:collection';
 import 'feature_flag/feature_flag_enum.dart';
 import 'feature_flag/feature_flag_helper.dart';
 
-class JitsiMeetingOptions {
-  JitsiMeetingOptions({
+class MBFMeetingOptions {
+  MBFMeetingOptions({
     required this.room,
   });
 
@@ -38,7 +38,7 @@ class JitsiMeetingOptions {
 
   @override
   String toString() {
-    return 'JitsiMeetingOptions{room: $room, serverURL: $serverURL, '
+    return 'MBFMeetingOptions{room: $room, serverURL: $serverURL, '
         'subject: $subject, token: $token, audioMuted: $audioMuted, '
         'audioOnly: $audioOnly, videoMuted: $videoMuted, '
         'userDisplayName: $userDisplayName, userEmail: $userEmail, '
