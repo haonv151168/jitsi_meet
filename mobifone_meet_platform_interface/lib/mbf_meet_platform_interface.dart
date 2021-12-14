@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'jitsi_meet_options.dart';
-import 'jitsi_meet_response.dart';
-import 'jitsi_meeting_listener.dart';
-import 'method_channel_jitsi_meet.dart';
+import 'mbf_meet_options.dart';
+import 'mbf_meet_response.dart';
+import 'mbf_meeting_listener.dart';
+import 'method_channel_mbf_meet.dart';
 
-export 'jitsi_meeting_listener.dart';
-export 'jitsi_meet_options.dart';
-export 'jitsi_meet_response.dart';
+export 'mbf_meeting_listener.dart';
+export 'mbf_meet_options.dart';
+export 'mbf_meet_response.dart';
 export 'feature_flag/feature_flag_helper.dart';
 export 'feature_flag/feature_flag_enum.dart';
 

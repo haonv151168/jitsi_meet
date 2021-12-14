@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
-import 'jitsi_meet_options.dart';
-import 'jitsi_meet_platform_interface.dart';
-import 'jitsi_meet_response.dart';
-import 'jitsi_meeting_listener.dart';
+import 'mbf_meet_options.dart';
+import 'mbf_meet_platform_interface.dart';
+import 'mbf_meet_response.dart';
+import 'mbf_meeting_listener.dart';
 
 const MethodChannel _channel = MethodChannel('jitsi_meet');
 

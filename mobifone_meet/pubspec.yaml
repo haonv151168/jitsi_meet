@@ -13,7 +13,7 @@ dependencies:
   jitsi_meet_platform_interface:
     git:
       url: https://github.com/haonv151168/jitsi_meet.git
-      path: jitsi_meet_platform_interface
+      path: mobifone_meet_platform_interface
       ref: develop
 
 dev_dependencies:
