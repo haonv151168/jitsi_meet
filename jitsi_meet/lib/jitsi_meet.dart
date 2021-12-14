@@ -9,10 +9,10 @@ import 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart
 
 export 'package:jitsi_meet_platform_interface/jitsi_meet_platform_interface.dart'
     show
-        JitsiMeetingOptions,
-        JitsiMeetingResponse,
-        JitsiMeetingListener,
-        JitsiGenericListener,
+        MBFMeetingOptions,
+        MBFMeetingResponse,
+        MBFMeetingListener,
+        MBFGenericListener,
         FeatureFlagHelper,
         FeatureFlagEnum;
 
@@ -30,11 +30,11 @@ class MBFMeet {
     }, "Only alphanumeric, dash, and underscore chars allowed"),
   };
 
-  /// Joins a meeting based on the JitsiMeetingOptions passed in.
-  /// A JitsiMeetingListener can be attached to this meeting that will automatically
+  /// Joins a meeting based on the MBFMeetingOptions passed in.
+  /// A MBFMeetingListener can be attached to this meeting that will automatically
   /// be removed when the meeting has ended
-  static Future<JitsiMeetingResponse> joinMeeting(JitsiMeetingOptions options,
-      {JitsiMeetingListener? listener,
+  static Future<MBFMeetingResponse> joinMeeting(MBFMeetingOptions options,
+      {MBFMeetingListener? listener,
       Map<RoomNameConstraintType, RoomNameConstraint>?
           roomNameConstraints}) async {
     assert(options.room.trim().isNotEmpty, "room is empty");
@@ -60,51 +60,51 @@ class MBFMeet {
           "URL must be of the format <scheme>://<host>[/path], like https://someHost.com");
     }
     
-    return await JitsiMeetPlatform.instance
+    return await MBFMeetPlatform.instance
         .joinMeeting(options, listener: listener);
   }
 
   /// Initializes the event channel. Call when listeners are added
   static _initialize() {
     if (!_hasInitialized) {
-      JitsiMeetPlatform.instance.initialize();
+      MBFMeetPlatform.instance.initialize();
       _hasInitialized = true;
     }
   }
 
-  static closeMeeting() => JitsiMeetPlatform.instance.closeMeeting();
+  static closeMeeting() => MBFMeetPlatform.instance.closeMeeting();
 
-  /// Adds a JitsiMeetingListener that will broadcast conference events
-  static addListener(JitsiMeetingListener jitsiMeetingListener) {
-    JitsiMeetPlatform.instance.addListener(jitsiMeetingListener);
+  /// Adds a MBFMeetingListener that will broadcast conference events
+  static addListener(MBFMeetingListener mbfMeetingListener) {
+    MBFMeetPlatform.instance.addListener(mbfMeetingListener);
     _initialize();
   }
 
-  /// Removes the JitsiMeetingListener specified
-  static removeListener(JitsiMeetingListener jitsiMeetingListener) {
-    JitsiMeetPlatform.instance.removeListener(jitsiMeetingListener);
+  /// Removes the MBFMeetingListener specified
+  static removeListener(MBFMeetingListener mbfMeetingListener) {
+    MBFMeetPlatform.instance.removeListener(mbfMeetingListener);
   }
 
-  /// Removes all JitsiMeetingListeners
+  /// Removes all MBFMeetingListeners
   static removeAllListeners() {
-    JitsiMeetPlatform.instance.removeAllListeners();
+    MBFMeetPlatform.instance.removeAllListeners();
   }
 
-  /// allow execute a command over a Jitsi live session (only for web)
+  /// allow execute a command over a MBF live session (only for web)
   static executeCommand(String command, List<String> args) {
-    JitsiMeetPlatform.instance.executeCommand(command, args);
+    MBFMeetPlatform.instance.executeCommand(command, args);
   }
 }
 
 /// Allow create a interface for web view and attach it as a child
 /// optional param `extraJS` allows setup another external JS libraries
 /// or Javascript embebed code
-class JitsiMeetConferencing extends StatelessWidget {
+class MBFMeetConferencing extends StatelessWidget {
   final List<String>? extraJS;
-  JitsiMeetConferencing({this.extraJS});
+  MBFMeetConferencing({this.extraJS});
 
   @override
   Widget build(BuildContext context) {
-    return JitsiMeetPlatform.instance.buildView(extraJS!);
+    return MBFMeetPlatform.instance.buildView(extraJS!);
   }
 }
