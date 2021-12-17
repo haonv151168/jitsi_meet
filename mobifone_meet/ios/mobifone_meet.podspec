@@ -3,7 +3,7 @@
 # Run `pod lib lint jitsi_meet.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'jitsi_meet'
+  s.name             = 'mobifone_meet'
   s.version          = '0.0.1'
   s.summary          = 'Jitsi Meet Plugin'
   s.description      = <<-DESC
