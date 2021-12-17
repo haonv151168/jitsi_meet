@@ -1,6 +1,6 @@
 #import "JitsiMeetPlugin.h"
 #if __has_include(<jitsi_meet/jitsi_meet-Swift.h>)
-#import <jitsi_meet/jitsi_meet-Swift.h>
+#import <mobifone_meet/jitsi_meet-Swift.h>
 #else
 // Support project import fallback if the generated compatibility header
 // is not copied when this plugin is created as a library.
